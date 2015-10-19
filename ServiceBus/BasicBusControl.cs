@@ -184,10 +184,10 @@ namespace ServiceBus
 
         public void HandleRequest<T,S>(string queueName, Func<T, S> requestHandler)
         {
-            //if(!QueueManager.QueueExists(queueName))
-            //{
-            //    throw new EntryPointNotFoundException("Queue " + queueName + " does not exist.");
-            //}
+            if (!QueueManager.QueueExists(queueName))
+            {
+                throw new EntryPointNotFoundException("Queue " + queueName + " does not exist.");
+            }
 
             var evtBasicConsumer = new EventingBasicConsumer(_model);
 
