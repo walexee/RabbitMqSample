@@ -13,7 +13,7 @@ namespace ReponseConsoleApp
     {
         static void Main(string[] args)
         {
-            var queueName = "Product.Orders.Request";
+            var queueName = "Product.Orders.Request"; //queue name
             var bus = ServiceBusFactory.CreateBasic(0, 1);
 
             Console.ForegroundColor = ConsoleColor.DarkGreen;
